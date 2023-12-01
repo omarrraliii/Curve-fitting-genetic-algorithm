@@ -1,0 +1,10 @@
+Best coefficients for dataset 1: 11.0531 3.40813 -4.39159 0.596142 
+MSE is: 42.6651
+Best coefficients for dataset 2: 16.3672 5.25079 21.799 -9.61907 -9.35699 1.79231 
+MSE is: 303674
+Best coefficients for dataset 3: 12.3772 8.25702 4.2443 12.516 4.58126 -5.93639 0.792708 
+MSE is: 577919
+Best coefficients for dataset 4: 17.5619 9.98304 7.60399 -9.62421 1.39028 
+MSE is: 3128.18
+Best coefficients for dataset 5: -9.98741 -9.22229 -9.99491 -9.99969 -4.06262 17.0051 4.81336 -6.70775 46.3037 -8.12303 0.0716629 
+MSE is: 2.53974e+12
