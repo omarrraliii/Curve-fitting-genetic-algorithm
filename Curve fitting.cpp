@@ -78,7 +78,7 @@ void mutate(vector<double> &individual, int gen)
 {
     random_device rd;
     mt19937 regen(rd());
-    uniform_real_distribution<double> dis(0.0, 0.9);
+    uniform_real_distribution<double> dis(0.0, 0.999999999999);
     for (double &gene : individual)
     {
         if (dis(regen) <= PM)
@@ -126,7 +126,7 @@ vector<double> genetic_algorithm(const vector<pair<double, double>> &data_points
         {
             fitness_values_current_generation[i] = {1.0/(MSE(population[i], data_points, num_points, degree)), i};
         }
-        random_device rd;
+        random_device rd;                                                                       //tournament selection
         mt19937 regen(rd());
         uniform_int_distribution<int> dist(0, population_size-1);
         vector<pair<double, int>> mating_pool(population_size);
@@ -145,7 +145,7 @@ vector<double> genetic_algorithm(const vector<pair<double, double>> &data_points
         }
         sort(mating_pool.rbegin(), mating_pool.rend());
         vector<vector<double>> offspring(population_size);
-        for (int i = 0; i < population_size - 1; i += 2)
+        for (int i = 0; i <= population_size - 2; i += 2)
         {
             vector<vector<double>> parents(2);
             parents[0] = population[mating_pool[i].second];
@@ -153,7 +153,7 @@ vector<double> genetic_algorithm(const vector<pair<double, double>> &data_points
 
             random_device rd;
             mt19937 regen(rd());
-            uniform_real_distribution<double> dist(0.0, 0.9);
+            uniform_real_distribution<double> dist(0.0, 0.99999999999999);
             vector<vector<double>> children(2);
             if (dist(regen) < PC)
             {
